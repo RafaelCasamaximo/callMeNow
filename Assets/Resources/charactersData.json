@@ -1,0 +1,21 @@
+{
+    "characters": [
+        {
+            "name": "Nome Teste",
+            "password": "teste",
+            "passwordTip": "teste",
+            "emails": [
+                {
+                    "to": "Destinatario Teste",
+                    "subject": "Email Teste",
+                    "content": "Texto Teste"
+                }
+            ],
+            "telephoneDialogue": [
+                "Teste1",
+                "Teste2",
+                "Teste3"
+            ]
+        }
+    ]
+}
