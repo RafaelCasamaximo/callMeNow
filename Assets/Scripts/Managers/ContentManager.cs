@@ -6,7 +6,7 @@ public class ContentManager : MonoBehaviour
 {
     private static ContentManager _instance;
 
-    public Characters characters;
+    public Character[] characters;
 
 
     public static ContentManager Instance{
@@ -23,13 +23,11 @@ public class ContentManager : MonoBehaviour
         _instance = this;
     }
 
-    void Start(){
-        LoadCharacterDataFromJson();
-    }
-
     public void LoadCharacterDataFromJson(){
         JSONLoader jsonLoader = new JSONLoader("charactersData");
+        characters = jsonLoader.Load();
 
     }
+
 
 }

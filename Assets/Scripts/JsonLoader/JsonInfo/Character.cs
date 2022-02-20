@@ -5,9 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class Character
 {
-    public string name;
+    public string characterName;
     public string password;
     public string passwordTip;
     public Email[] emails;
-    public Dialogue telephoneDialogue;
+    public string[] telephoneDialogue;
+
 }

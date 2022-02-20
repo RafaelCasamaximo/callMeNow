@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Characters : MonoBehaviour
+public class Email
 {
-    public Character[] characters;
+    public string to;
+    public string subject;
+    public string content;
+    
 }

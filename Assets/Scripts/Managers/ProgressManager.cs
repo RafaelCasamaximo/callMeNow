@@ -24,6 +24,10 @@ public class ProgressManager : MonoBehaviour
         _instance = this;
     }
 
+    void Start(){
+        ContentManager.Instance.LoadCharacterDataFromJson();
+    }
+
     public void CallNumber(string number){
         switch (number)
         {
@@ -35,7 +39,4 @@ public class ProgressManager : MonoBehaviour
                 break;
         }
     }
-
-
-
 }
