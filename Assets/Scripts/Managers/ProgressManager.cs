@@ -32,10 +32,30 @@ public class ProgressManager : MonoBehaviour
         switch (number)
         {
             case "12345678":
-                Debug.Log("FUNCIONA");
+                /*
+                    TODO Alguma coisa aqui vai fazer o dialogue manager começar o dialogo caso seja a opção certa
+                */
                 break;
+
+            /*
+                TODO colocar outros dialogos e números aqui
+            */
             default:
-                Debug.Log("NUMERO NAO EXISTE");
+                /*
+                    TODO Dialogo padrão pra quando não existe o número (ou sortear em um dos dialogos possíveis)
+                */
+                Dialogue wrongNumberDialogue = new Dialogue();
+
+                wrongNumberDialogue.name = "Me";
+                wrongNumberDialogue.sentences = new string[] {
+                    "I don't think that this is a valid number...",
+                    "I should try another number."
+                };
+
+                DialogueTrigger wrongNumberDialogueTrigger = new DialogueTrigger();
+                wrongNumberDialogueTrigger.dialogue = wrongNumberDialogue;
+                wrongNumberDialogueTrigger.TriggerDialogue();
+
                 break;
         }
     }

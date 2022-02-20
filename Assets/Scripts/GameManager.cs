@@ -116,9 +116,9 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator StopPlayerInSecondsCoroutine(float secs){
         yield return new WaitForSeconds(secs);
-        ResumeMovement();
-        ResumeRotation();
-        ResumeRayCasting();
+        StopMovement();
+        StopRotation();
+        StopRayCasting();
     }
 
     public void ResumePlayerInSeconds(float secs){

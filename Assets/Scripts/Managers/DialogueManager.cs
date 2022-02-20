@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> sentences;
     public GameObject dialogueUIGameObject;
     public DialogueUI dialogueUI;
+    public Telephone telephone;
 
     public static DialogueManager Instance{
         get{
@@ -29,6 +30,10 @@ public class DialogueManager : MonoBehaviour
     }
 
     void Start(){
+        /*Pegar telephone*/
+        telephone = GameObject.Find("telephone").GetComponent<Telephone>();
+
+        sentences = new Queue<string>();
         nameText = GameObject.Find("Dialogue UI/Dialogue Box/Dialogue Name").GetComponent<TMP_Text>();
         contentText = GameObject.Find("Dialogue UI/Dialogue Box/Dialogue Content").GetComponent<TMP_Text>();
         dialogueUIGameObject.SetActive(false);
@@ -36,6 +41,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        telephone.CloseTelephone();
+        GameManager.Instance.StopPlayerInSeconds(1);
+        dialogueUIGameObject.SetActive(true);
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -60,13 +69,13 @@ public class DialogueManager : MonoBehaviour
         contentText.text = sentence;
     }
 
-    private void EndDialogue()
+    public void EndDialogue()
     {
+        dialogueUIGameObject.SetActive(false);
+
+        GameManager.Instance.ResumePlayer();
         nameText.text = " ";
         contentText.text = " ";
     }
 
-    public void TestFunction(){
-        Debug.Log("");
-    }
 }

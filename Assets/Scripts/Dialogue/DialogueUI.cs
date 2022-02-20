@@ -11,4 +11,17 @@ public class DialogueUI : MonoBehaviour
         DialogueManager.Instance.dialogueUIGameObject = this.gameObject;
         nextSentence = GameObject.Find("Dialogue UI/Dialogue Box/Next Sentence");
     }
+    
+    void Update(){
+
+        // Next Sentence
+        if(Input.GetMouseButtonDown(1)){
+            DialogueManager.Instance.DisplayNextSentence();
+        }
+
+        // Skip Dialogue
+        if(Input.GetMouseButtonDown(0)){
+            DialogueManager.Instance.EndDialogue();
+        }
+    }
 }

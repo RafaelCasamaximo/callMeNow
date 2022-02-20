@@ -24,7 +24,6 @@ public class Paper : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E)){
             if(!GameManager.Instance.HasUIOpen && !GameManager.Instance.HasTelephoneOpen){
                ToggleUI(); 
-               DialogueManager.Instance.TestFunction();
             }
         }
     }
